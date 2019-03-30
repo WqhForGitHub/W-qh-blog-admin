@@ -5,8 +5,7 @@
       collapsedWidth="0"
       @collapse="onCollapse"
       @breakpoint="onBreakpoint"
-      style="z-index:100;"
-    >
+      style="z-index:100;">
       <div class="logo" />
       <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['4']">
         <a-menu-item v-for="(item, index) in menuList" :key="index" @click="SelectedItem(index)">
@@ -30,37 +29,43 @@
   </a-layout>
 </template>
 <script>
-import bloglist from '../blogList/blogList'
-import blogging from '../blogging/blogging'
-import tag from '../tag/tag'
-import classify from '../classify/classify'
+import bloglist from './blogList'
+import blogging from './blogging'
+import tag from './tag'
+import classify from './classify'
+
+require('../viewstyle/main.scss')
 export default {
   components: {
-      bloglist,
-      blogging,
-      tag,
-      classify
+    bloglist,
+    blogging,
+    tag,
+    classify
   },
   data() {
-      return {
-           menuList:[{
-                icontype: 'home',
-                label:'首页',
-                show:true
-            },{
-                icontype: 'edit',
-                label:'写博客',
-                show:false
-            },{
-                icontype: 'folder-open',
-                label:'分类',
-                show:false
-            },{
-                icontype: 'tags',
-                label:'标签',
-                show:false
-            }]
-      }
+    return {
+      menuList:[
+      {
+        icontype: 'home',
+        label:'首页',
+        show:true
+      },
+      {
+        icontype: 'edit',
+        label:'写博客',
+        show:false
+      },
+      {
+        icontype: 'folder-open',
+        label:'分类',
+        show:false
+      },
+      {
+        icontype: 'tags',
+        label:'标签',
+        show:false
+      }]
+    }
   },
   methods: {
     unLogin(){
@@ -86,21 +91,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-#components-layout-demo-responsive {
-    min-height:100vh;
-    height:auto;
-}
-#components-layout-demo-responsive .logo {
-  height: 32px;
-  background: rgba(255,255,255,.2);
-  margin: 16px;
-}
-.alignleft {
-    margin-left:10px;
-    font-size:18px;
-}
-.unLogin{
-    float:right;
-    margin-top:15px;
-}
+
 </style>

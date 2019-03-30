@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import main from '../main/main'
-import blogList from '../blogList/blogList'
-import blogging from '../blogging/blogging'
-import tag from '../tag/tag'
-import classify from '../classify/classify'
+import Login from '@/view/Login'
+import main from '../view/main'
+import blogList from '../view/blogList'
+import blogging from '../view/blogging'
+import tag from '../view/tag'
+import classify from '../view/classify'
 Vue.use(Router)
 
 export default new Router({
