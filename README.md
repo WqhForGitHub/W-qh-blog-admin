@@ -1,6 +1,52 @@
-# w-qh-blog-admin
+# 博客后台管理
 
-> A Vue.js project
+博客前台的项目地址: [https://github.com/WqhForGitHub/W-qh-blog](https://github.com/WqhForGitHub/W-qh-blog)
+
+## 前言
+
+博客后台管理是基于 Vue + Antd 实现的，Antd 确实是非常适合中后台应用的开发，有非常多的组件可以使用，非常多的组件可以使用。
+
+### 技术栈
+
+* Vue
+* ant-design-vue:  基于 Vue 的 UI 库
+* fly:  异步请求库
+* vue-router:  前端路由
+* vuex:  管理应用数据
+* async/await: 处理异步请求接口
+
+### 实现的功能
+
+- [x] 博客的增删改查
+- [x] 分类、标签的增删
+- [x] 写博客
+
+### TODO
+
+- [ ] markdown在线编辑器
+
+### 预览
+
+**登录界面**
+
+![登录](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog-admin/Login.png)
+
+**首页**
+
+![首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog-admin/blogList.png)
+
+**修改博客**
+
+![修改博客](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog-admin/modify.png)
+
+**发布博客**
+
+![发布博客](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog-admin/writeblog.png)
+
+**标签管理**
+
+![标签管理](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog-admin/tag.png)
+
 
 ## Build Setup
 
