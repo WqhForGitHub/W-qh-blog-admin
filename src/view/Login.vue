@@ -44,7 +44,11 @@ export default {
     async getToken() {
       const res = await gettoken();
       if (res.status == statusCode.OK) {
-        console.log(res)
+        console.log(res.data)
+        this.$store.commit({
+          type:'getToken',
+          token:res.data
+        })
         // 有返回Token证明有登录成功
         if(res.data !== '') {
           this.$router.push('/main')

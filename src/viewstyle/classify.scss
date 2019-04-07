@@ -68,36 +68,17 @@
     }
   }
 }
-.kindmodal {
-  div {
-    display: flex;
-    p {
-      font-size:15px;
-      line-height:30px;
-    }
-    .input {
-      width:50%;
-      margin-left:5%;
-    }
-  }
-}
-
-
-
-
-
-
-@media screen and (max-width:1024px) {
-    .tag {
-        margin-top:2%;
-    }    
-    .addtag {
-        margin-top:2%;
-    }
-}
-@media screen and (max-width:768px) {
-    .blogList {
-        width:92%;
-        position:absolute;
-    }
-}
+// .kindmodal {
+//   width:500px;
+//   div {
+//     display: flex;
+//     p {
+//       font-size:15px;
+//       line-height:30px;
+//     }
+//     .input {
+//       width:50%;
+//       margin-left:5%;
+//     }
+//   }
+// }

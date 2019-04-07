@@ -25,10 +25,11 @@
     okText="确认添加"
     cancelText="取消"
     @ok="confirmadd">
-    <div>
-      <p>分类:</p>
-      <a-input v-model="inputclassify" class="input" placeholder="请输入您要添加的分类"/>
+    <div style="display:flex;">
+      <p style="width:50px;font-size:15px;line-height:30px;">分类:</p>
+      <a-input style="width:200px;" v-model="inputclassify" class="input" placeholder="请输入您要添加的分类"/>
     </div>
+    
   </a-modal>
   <a-modal
     title="删除分类"

@@ -1,38 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/view/Login'
-import main from '../view/main'
-import blogList from '../view/blogList'
-import blogging from '../view/blogging'
-import tag from '../view/tag'
-import classify from '../view/classify'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      component: Login
+      component: () => import('@/view/Login')
     },
     {
       path:'/main',
-      component:main
+      component: () => import('../view/main')
     },
     {
       path:'/bloglist',
-      component:blogList
+      component: () => import('../view/blogList')
     },
     {
       path:'/blogging',
-      component:blogging
+      component: () => import('../view/blogging')
     },
     {
       path:'/tag',
-      component:tag
+      component: () => import('../view/tag')
     },
     {
       path:'/classify',
-      component:classify
+      component: () => import('../view/classify')
     }
   ]
 })
