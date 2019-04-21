@@ -37,17 +37,27 @@ import moment from 'moment'
 import { TreeSelect } from 'ant-design-vue'
 import marked from 'marked'
 
+// var toc = require('markdown-toc');
 require('../viewstyle/blogging.scss')
 var rendererMD = new marked.Renderer()
 marked.setOptions({
   renderer: rendererMD,
-  gfm: true,
-  tables: true,
+  baseUrl: null,
   breaks: false,
+  gfm: true,
+  headerIds: true,
+  headerPrefix: "",
+  highlight: null,
+  langPrefix: "language-",
+  mangle: true,
   pedantic: false,
   sanitize: false,
-  smartLists: true,
-  smartypants: false
+  sanitizer: null,
+  silent: false,
+  smartLists: false,
+  smartypants: false,
+  tables: true,
+  xhtml: false
 })
 export default {
   data() {
@@ -57,7 +67,8 @@ export default {
       briefcontent: '',      // 简要介绍
       selectedTag: [],    // 已选中标签
       selectedkind: [],   // 已选中类别
-      MdToHTML:''    // 转换后的HTML
+      MdToHTML:'',    // 转换后的HTML
+      catalog: '' // 博客目录
     }
   },
   methods: {
@@ -69,6 +80,7 @@ export default {
     this.selectedTag = [];
     this.selectedkind = [];
     this.MdToHTML = '';
+    this.catalog = ''
   },
   // Markdown转html
   getMarkdownarticle() {
@@ -76,6 +88,7 @@ export default {
     //console.log(marked(this.Markdownarticle));  // string类型
     this.MdToHTML = marked(this.Markdownarticle, {sanitize: true});
     console.log(this.MdToHTML)
+    // this.catalog = toc(this.Markdownarticle).content;
   },
   // 标签选择项
   handleChange(value) {
@@ -111,7 +124,8 @@ export default {
         selectedkind:this.selectedkind, // 类别
         briefcontent:this.briefcontent, // 简要介绍
         blogcontent:this.MdToHTML,    // 博客内容HTML形式
-        markdowncontent:this.Markdownarticle
+        markdowncontent:this.Markdownarticle,
+        catalog: this.catalog
       })
       if (res.status == statusCode.OK) {
         console.log(res)

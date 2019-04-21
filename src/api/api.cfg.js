@@ -15,5 +15,6 @@ export const apiURL = {
     ADDTAG: `${SERVER}/insertag`,
     FINDCLASSIFY: `${SERVER}/findClassify`,
     INSERTCLASSIFY: `${SERVER}/insertclassify`,
+    PERSONALINFO: `${SERVER}/PerosnalInfo`,
     GETTOKEN: `${SERVER}/Login`
 }

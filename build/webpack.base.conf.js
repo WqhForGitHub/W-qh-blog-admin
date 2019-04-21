@@ -30,6 +30,7 @@ module.exports = {
     }
   },
   module: {
+    unknownContextCritical : false,
     rules: [
       {
         test: /\.less$/,

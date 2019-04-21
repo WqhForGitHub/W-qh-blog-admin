@@ -51,7 +51,9 @@
           </div>
         </div>
         <!-- 分页 -->
-        <div class="page"><a-pagination @change="changepage" v-model="current" :total="50" :pageSize="5" /></div>
+        <div class="page">
+          <a-pagination @change="changepage" v-model="current" :total="pageCount" :pageSize="5" />
+        </div>
       </div>
     </a-card>
 
@@ -94,7 +96,7 @@
   </div>
 </template>
 <script>
-import { getbloglist, blog, Deleteblog, modifyblog } from '../api/index'
+import { getbloglist, blog, Deleteblog, modifyblog, getPersonalInfo } from '../api/index'
 import { statusCode } from '../api/api.cfg.js'
 
 require('../viewstyle/blogList.scss')
@@ -111,7 +113,8 @@ export default {
       Modifyclassify:[],
       selectedTag:[],
       selectedkind:[],
-      page:1
+      page:1,
+      pageCount: 0,
     }
   },
   methods: {
@@ -235,9 +238,17 @@ export default {
           this.ListAllblog();
       }
     },
+    async PersonalInfo() {
+     const res = await getPersonalInfo();
+      if (res.status == statusCode.OK) {
+        console.log(res.data)
+        this.pageCount = res.data[0].blognum
+      }
+    }
   },
   mounted() {
     this.initList(1);
+    this.PersonalInfo()
   }    
 }
 </script>

@@ -29,3 +29,5 @@ export const classifyList = () => fly.get(`${apiURL.FINDCLASSIFY}`)
 export const addclassify = (params) => fly.post(`${apiURL.INSERTCLASSIFY}`, qs.stringify(params))
 // 获取token
 export const gettoken = () => fly.get(`${apiURL.GETTOKEN}`)
+// 获取个人信息
+export const getPersonalInfo = () => fly.get(`${apiURL.PERSONALINFO}`)

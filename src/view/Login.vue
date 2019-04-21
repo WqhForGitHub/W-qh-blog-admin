@@ -4,10 +4,10 @@
       <div class="Avatar">
         <img src="/static/admin.png" />
       </div>
-    <a-input class="userinput" placeholder="username" v-model="username">
+    <a-input type="text" class="userinput" placeholder="username" v-model="username">
       <a-icon class="user" slot="prefix" type="user"/>
     </a-input>
-    <a-input class="passwordinput" placeholder=" password" v-model="passwordname">
+    <a-input type="password" class="passwordinput" placeholder=" password" v-model="passwordname">
       <a-icon class="password" slot="prefix" type="lock" />
     </a-input>
     <a-button type="primary" block class="buttom" @click="Login()">登录</a-button>
